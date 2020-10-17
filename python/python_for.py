@@ -59,16 +59,20 @@ for i in t_user:
  '''
 # t_user =[{'name':"kk","pwd":"123456",'sex':'男'},{'name':"ss","pwd":'456789'}]
 #作业,输入账户密码,如b中存在,那就注册失败,如果没有那就添加到t_user, 
-t_user =[{'name':"kk","pwd":"123456",'sex':'男'},{'name':"ss","pwd":'456789'}]
+def login(username,password):
+ t_user =[{'name':"kk","pwd":"123456",'sex':'男'},{'name':"ss","pwd":'456789'}]
+ a=1
+ for i in t_user:
+   if user==i.get('name'):
+     print('注册失败,账户已存在')
+     break
+   elif len(t_user)==a :
+     t_user.append({'name':user,'pwd':pwd})
+     print('注册为新账号')
+     break
+   a=a+1
+ print(t_user)
+
 user=input("输入账户")
 pwd=input('输入密码')
-a=1
-for i in t_user:
-  if user==i.get('name'):
-    print('注册失败,账户已存在')
-  elif len(t_user)==a:
-   t_user.append({'name':user,'pwd':pwd})
-   break
-  a=a+1
-
-print(t_user)
+login(user,pwd)
