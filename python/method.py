@@ -8,12 +8,10 @@
 # a= add(1,2)
 # print(a)
 
-# # 减法
-# def sub(s1,s2):
-#     sub=s1-s2
-#     return sub
+# 减法
+def sub():
+ s1=int(input('输入被减数'))
+ s2=int(input('输入减数'))
+ c=s1-s2
+ return c
 
-# num1=int(input('输入被减数'))
-# num2=int(input('输入减数'))
-# a=sub(num1,num2)
-# print(a)
