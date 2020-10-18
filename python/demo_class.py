@@ -41,6 +41,5 @@ class Cat():
  def __init__(self,mx):
      self.name=mx
 # 实例化的时候需要给出构造方法的参数,必须加
-c=C
-at("tomcat")
+c=Cat("tomcat")
 print(c.name)
