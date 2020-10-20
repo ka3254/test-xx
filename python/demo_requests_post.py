@@ -1,10 +1,13 @@
 import requests
 from tools.dbtools import linkdb
-url="http://118.24.105.78:2333/login"
+from tools.excel_tools import read_excel
+res=read_excel('data.xlsx','登陆')
+print(res[0][2])
+url=res[0][2]
 # 将请求参数写入data
-data={'username':'liuyun1',"password":'a12345678'}
+data=eval(res[0][4])#读取到的为字符串,eval()方法强转为字典进行使用
 # 将请求头装入h
-h={"Content-Type":"application/json"}
+h=eval(res[0][5])
 # 将post请求的返回值装入res
 res=requests.post(url=url,json=data)
 # 判断状态码是否为200
@@ -21,9 +24,9 @@ print(res.text)
 token=res.json()['data']['token']
 print(token)
 
-url_1="http://118.24.105.78:2333/inspirer/new"
-header1={"Content-Type":"application/json","token":token}
-data_1={ "content":"156486645647",  "ximg":"dsfsdf.jpg" }
-res1=requests.post(url_1,json=data_1,headers=header1)
-print(res1.text)
+# url_1="http://118.24.105.78:2333/inspirer/new"
+# header1={"Content-Type":"application/json","token":token}
+# data_1={ "content":"156486645647",  "ximg":"dsfsdf.jpg" }
+# res1=requests.post(url_1,json=data_1,headers=header1)
+# print(res1.text)
 
