@@ -20,3 +20,10 @@ print(res.text)
 # 提取出token
 token=res.json()['data']['token']
 print(token)
+
+url_1="http://118.24.105.78:2333/inspirer/new"
+header1={"Content-Type":"application/json","token":token}
+data_1={ "content":"156486645647",  "ximg":"dsfsdf.jpg" }
+res1=requests.post(url_1,json=data_1,headers=header1)
+print(res1.text)
+
